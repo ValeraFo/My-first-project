@@ -44,3 +44,4 @@ async def dice(ctx,dic,mod):
 	await ctx.send("Число: "+str(result)+"\n"+str(result)+" + "+str(mod)+" = "+str(int(result)+int(mod)))
 
 token = os.environ.get('BOT_TOKEN')
+client.run(str(token))
