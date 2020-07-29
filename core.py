@@ -41,7 +41,7 @@ async def div(ctx,s1,s2):
 @client.command(pass_context = True)
 async def dice(ctx,dic,mod):
 	result = random.randint(1,int(dic))
-	await ctx.send("Число: "+str(result)+"\n"+str(result)+" + "+str(mod)+" = "+str(int(result)+int(mod)))
+	await ctx.send(str(result+int(mod)))
 
 token = os.environ.get('TOKEN')
 client.run(str(token))
