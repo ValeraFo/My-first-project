@@ -43,7 +43,7 @@ async def dice(ctx,dic,mod):
 	result = random.randint(1,int(dic))
 	try:
 		nam = str(result+int(mod))
-	except discord.ext.commands.MissingRequiredArgument:
+	except MissingRequiredArgument:
 		nam = str(result)
 	finally:
 		await ctx.send(str(nam))
