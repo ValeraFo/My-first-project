@@ -40,16 +40,17 @@ async def div(ctx,s1,s2):
 
 @client.command(pass_context = True)
 async def dice(ctx,dic,mod):
+'''
 	result = random.randint(1,int(dic))
 	await ctx.send(result+int(mod))
 '''
 	result = random.randint(1,int(dic))
 	try:
 		nam = str(result+int(mod))
-	except NameError:
+	except discord.ext.commands.MissingRequiredArgument:
 		nam = str(result)
 	finally:
 		await ctx.send(str(nam))
-'''
+
 token = os.environ.get('TOKEN')
 client.run(str(token))
