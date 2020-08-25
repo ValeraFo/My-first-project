@@ -42,6 +42,6 @@ async def div(ctx,s1,s2):
 async def dice(ctx,dic,mod):
 	result = random.randint(1,int(dic))
 	await ctx.send(str(result+int(mod)))
-	#as
+	
 token = os.environ.get('TOKEN')
 client.run(str(token))
