@@ -11,7 +11,7 @@ async def on_ready():
 	print("Bot is online")
 
 @client.command(pass_context = True)
-async def clear(ctx,amount = 2):
+async def clear(ctx,amount=1):
     await ctx.channel.purge(limit = amount+1)
 
 
