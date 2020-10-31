@@ -33,8 +33,8 @@ async def dice(ctx,dic = 20,mod = 0):
 	await ctx.send(str(result+int(mod)))
 
 @client.command(pass_context = True)
-async def test1(ctx,as):
-	x = as
+async def test1(ctx,td):
+	x = td
 	await ctx.send(str(x))
 
 @client.command(pass_context = True)
