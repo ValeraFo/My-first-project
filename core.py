@@ -6,6 +6,9 @@ import os
 client = commands.Bot(command_prefix = '&')
 client.remove_command("help")
 
+global x
+x=10
+
 @client.event
 async def on_ready():
 	print("Bot is online")
@@ -28,6 +31,15 @@ async def help(ctx):
 async def dice(ctx,dic = 20,mod = 0):
 	result = random.randint(1,int(dic))
 	await ctx.send(str(result+int(mod)))
+
+@client.command(pass_context = True)
+async def test1(ctx,as):
+	x = as
+	await ctx.send(str(x))
+
+@client.command(pass_context = True)
+async def test2(ctx):
+	await ctx.send(str(x))
 
 token = os.environ.get('TOKEN')
 client.run(str(token))
