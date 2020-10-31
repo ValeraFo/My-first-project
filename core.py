@@ -6,9 +6,6 @@ import os
 client = commands.Bot(command_prefix = '&')
 client.remove_command("help")
 
-global x
-x=10
-
 @client.event
 async def on_ready():
 	print("Bot is online")
@@ -34,6 +31,7 @@ async def dice(ctx,dic = 20,mod = 0):
 
 @client.command(pass_context = True)
 async def test1(ctx,td):
+	global x
 	x = td
 	await ctx.send(str(x))
 
