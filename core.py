@@ -31,7 +31,7 @@ async def dice(ctx,dic = 20,mod = 0,c = 1):
 	res = ""
 	while c > 0:
 		result = random.randint(1,int(dic))
-		if x > 0 && y > 0:
+		if x > 0 and y > 0:
 			result = x
 			y = y-1
 		res = res+str(result)+"\n"
