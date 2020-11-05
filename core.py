@@ -36,7 +36,6 @@ async def dice(ctx,dic = 20,mod = 0,c = 1):
 			y = y-1
 		res = res+str(result)+"\n"
 		c = c-1
-	x = 0
 	await ctx.send(str(res))
 	
 
