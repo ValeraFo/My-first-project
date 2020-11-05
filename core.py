@@ -27,9 +27,13 @@ async def help(ctx):
 @client.command(pass_context = True, aliases = ['d','д'])
 async def dice(ctx,dic = 20,mod = 0,c = 1):
     while c > 0:
-        result = random.randint(1,int(dic))
+	result = random.randint(1,int(dic))
+	if x > 0:
+		result = x
         await ctx.send(str(result+int(mod)))
         c = c-1
+    x = 0
+	
 
 @client.command(pass_context = True)
 async def test1(ctx,td):
