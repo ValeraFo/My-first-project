@@ -34,7 +34,7 @@ async def dice(ctx,dic = 20,mod = 0,c = 1):
 			dm = "  Ха неудачник"
 		elif c == 1 and result >= 20:
 			dm = "  Недурно"
-		res = res+str(result+mod)+str(dm)"\n"
+		res = res+str(result+mod)+str(dm)+"\n"
 		c = c-1
 		dm = ""
 	await ctx.send(str(res))
