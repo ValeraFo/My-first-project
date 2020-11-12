@@ -29,7 +29,7 @@ async def dice(ctx,dic = 20,mod = 0,c = 1):
 	res = ""
 	while c > 0:
 		result = random.randint(1,int(dic))
-		res = res+str(result+mod)+str(dm)+"\n"
+		res = res+str(result+mod)+"\n"
 		c = c-1
 		dm = ""
 	await ctx.send(str(res))
