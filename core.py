@@ -26,30 +26,13 @@ async def help(ctx):
 
 @client.command(pass_context = True, aliases = ['d','д'])
 async def dice(ctx,dic = 20,mod = 0,c = 1):
-	global x
-	global y
 	res = ""
 	while c > 0:
 		result = random.randint(1,int(dic))
-		if x > 0 and y > 0:
-			result = x
-			y = y-1
-		res = res+str(result)+"\n"
+		res = res+str(result+mod)+"\n"
 		c = c-1
 	await ctx.send(str(res))
-	
 
-@client.command(pass_context = True)
-async def test1(ctx,td,kx):
-	global x
-	global y
-	x = int(td)
-	y = int(kx)
-	await ctx.send(str(x)+" "+str(kx))
-
-@client.command(pass_context = True)
-async def test2(ctx):
-	await ctx.send(str(x))
 
 token = os.environ.get('TOKEN')
 client.run(str(token))
