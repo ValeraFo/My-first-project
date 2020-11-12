@@ -30,9 +30,9 @@ async def dice(ctx,dic = 20,mod = 0,c = 1):
 	dm = ""
 	while c > 0:
 		result = random.randint(1,int(dic))
-		if result == 1:
+		if (mod+result) == 1:
 			dm = "  Ха неудачник"
-		elif result > 19:
+		elif (mod+result) > 19:
 			dm = "  Недурно"
 		res = res+str(result+mod)+str(dm)+"\n"
 		c = c-1
