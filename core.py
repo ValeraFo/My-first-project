@@ -25,18 +25,27 @@ async def help(ctx):
     await ctx.send(embed = emb)
 
 @client.command(pass_context = True, aliases = ['d','д'])
-async def dice(ctx,dic = 20,mod = "0",c = 1):
+async def dice(ctx,dic = 20,mod = 0,c = 1):
+	global min
 	res = ""
+	'''
 	if mod[0] == "-":
 		di = 0 - int(mod[1])
 	else:
 		di = int(mod)
+	'''
 	while c > 0:
 		result = random.randint(1,int(dic))
 		res = res+str(result+int(mod))+"\n"
 		c = c-1
 		dm = ""
 	await ctx.send(str(res))
+
+@client.command(pass_context = True)
+async def min(ctx,a = 0):
+	global min
+	min = int(a)
+	await ctx.send(str(min))
 
 
 token = os.environ.get('TOKEN')
