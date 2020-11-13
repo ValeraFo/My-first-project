@@ -25,7 +25,7 @@ async def help(ctx):
     await ctx.send(embed = emb)
 
 @client.command(pass_context = True, aliases = ['d','д'])
-async def dice(ctx,dic = 20,mod = 0,c = 1):
+async def dice(ctx,dic = 20,mod = "0",c = 1):
 	res = ""
 	if mod[0] == "-":
 		di = 0 - int(mod[1])
