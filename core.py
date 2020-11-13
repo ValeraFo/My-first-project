@@ -40,13 +40,13 @@ async def dice(ctx,dic = 20,mod = 0,c = 1):
 		c = c-1
 		dm = ""
 	await ctx.send(str(res))
-
+'''
 @client.command(pass_context = True)
 async def min(ctx,a = 0):
 	global min
 	min = int(a)
 	await ctx.send(str(min))
-
+'''
 
 token = os.environ.get('TOKEN')
 client.run(str(token))
