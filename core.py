@@ -48,5 +48,10 @@ async def min(ctx,a = 0):
 	await ctx.send(str(min))
 '''
 
+@client.command(pass_context = True)
+async def say(ctx, i, s):
+	channel = client.get_channel(int(i))
+	await channel.send(s)
+
 token = os.environ.get('TOKEN')
 client.run(str(token))
