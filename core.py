@@ -47,13 +47,16 @@ async def min(ctx,i = 0):
 async def say(ctx, i, s):
 	channel = client.get_channel(int(i))
 	await channel.send(s)
-
+'''
 @client.command(pass_context = True)
-async def mc(ctx):
+async def m(ctx, i, a1, a2, b1, b2):
 	global map
-	m = "0000000000\n"
-	map = 10*m
-	await ctx.send(map)
-
+	if i == "clear":
+		m = ["0000000000\n"]
+		map = 10*m
+		await ctx.send(map)
+	elif i == "cube":
+		
+'''
 token = os.environ.get('TOKEN')
 client.run(str(token))
