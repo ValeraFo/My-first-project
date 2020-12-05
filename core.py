@@ -48,5 +48,12 @@ async def say(ctx, i, s):
 	channel = client.get_channel(int(i))
 	await channel.send(s)
 
+@client.command(pass_context = True)
+async def mc(ctx):
+	global map
+	m = "0000000000\n"
+	map = 10*m
+	await ctx.send(map)
+
 token = os.environ.get('TOKEN')
 client.run(str(token))
