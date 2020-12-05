@@ -28,13 +28,20 @@ async def help(ctx):
 async def dice(ctx,dic = 20,mod = 0,c = 1):
 	global min
 	res = ""
-	
+	result = -5
 	while c > 0:
-		result = random.randint(1,int(dic))
+		while result < min:
+			result = random.randint(1,int(dic))
 		res = res+str(result+int(mod))+"\n"
 		c = c-1
 		dm = ""
 	await ctx.send(str(res))
+
+@client.command(pass_context = True)
+async def min(ctx,i = 0):
+	global min
+	min = i
+	await ctx.send(i)
 
 @client.command(pass_context = True)
 async def say(ctx, i, s):
